@@ -18,7 +18,6 @@ const Login = () => {
   
 
   const handleChange=(e)=>{
-    console.log(e.target.name)
 
     if(e.target.name =='email'){
       setEmail(e.target.value)
@@ -32,7 +31,6 @@ const Login = () => {
   const handleSubmit= async (e)=>{
       e.preventDefault()
       const data={email,password}
-      console.log(data)
       let res= await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
         method: 'POST', 
         headers: {
@@ -42,7 +40,6 @@ const Login = () => {
       })
 
       let response= await res.json()
-      console.log(response)
       
       setEmail('')
       setPassword('')
